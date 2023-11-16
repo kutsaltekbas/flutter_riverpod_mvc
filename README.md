@@ -1,16 +1,8 @@
-# flutter_riverpod_mvc
+# Flutter'da Riverpod ve MVC-S pattern kullanarak basit login uygulaması oluşturalım
 
-A new Flutter project.
+Bu uygulama Flutter frameworkünde MVC-S yapısını kullanarak login işlemi yapmayı ve bir dizi kullanıcıyı API üzerinden çekmeyi sağlar. Uygulamadaki core klasörü, uygulamadan bağımsız ve taşınabilir dart dosyalarını içerir. Features klasörü ise bu uygulamada kullanılan MVC-S (Model - View - Controller / Service) dosyalarını içerir.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# Kurulum
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+İlk olarak uygulamamızdaki gerekli paketleri elde etmek için '**flutter pub get**' komutunu kullanmamız gerekiyor. Daha sonra easy localization paketimizin oluşturacağı dil dosyaları için '**dart  run  easy_localization:generate  -O  lib/core/init/lang  -f  keys  -o  locale_keys.g.dart  --source-dir  assets/languages**' komutunu çalıştırıyoruz. Dil dosyalarımızı tamamladığımıza göre artık son işlemimiz olan .gr uzantılı dosyalarımızı oluşturmak için ilgili extension veya '**dart  run  build_runner  watch**' build_runner paketimizi aktif hale getiriyoruz. Dosyalarımız oluşturulduktan sonra artık her şey hazır ! Uygulamayı denemeye veya istediğiniz gibi özelleştirmeye başlayabilirsiniz.
