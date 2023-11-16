@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod_mvc/src/core/constants/enums/loading_state_enum.dart';
 import 'package:flutter_riverpod_mvc/src/core/extension/ref_extension.dart';
 import 'package:flutter_riverpod_mvc/src/core/extension/string_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -192,6 +193,8 @@ class LoginView extends StatelessWidget {
 
   SizedBox loginButton(
       WidgetRef ref, LoginController notifier, BuildContext context) {
+    LoadingStateEnum loadingState =
+        ref.watch(loginServiceProvider).requestState.state;
     return SizedBox(
       width: 284.w,
       height: 45.h,
@@ -199,10 +202,23 @@ class LoginView extends StatelessWidget {
           style: ElevatedButton.styleFrom(
               elevation: 10.h, backgroundColor: ref.colorScheme.inverseSurface),
           onPressed: notifier.login,
-          child: Text(
-            LocaleKeys.login_screen_login_button.tr(),
-            style: ref.textTheme.displaySmall,
-          )),
+          child: switch (loadingState) {
+            LoadingStateEnum.NONE => Text(
+                LocaleKeys.login_screen_login_button.locale,
+                style: ref.textTheme.displaySmall,
+              ),
+            LoadingStateEnum.LOADING => Center(
+                child: CircularProgressIndicator(),
+              ),
+            LoadingStateEnum.SUCCESS => Icon(
+                Icons.check,
+                size: 15.w,
+              ),
+            LoadingStateEnum.FAIL => Icon(
+                Icons.error,
+                size: 15.w,
+              ),
+          }),
     );
   }
 }

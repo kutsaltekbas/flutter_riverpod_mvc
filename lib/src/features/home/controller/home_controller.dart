@@ -39,7 +39,8 @@ class HomeController extends StateNotifier<HomeState> {
   }
 
   Future<void> logout() async {
-    localeManager.setStringValue(PreferencesKeys.TOKEN, '');
+    await localeManager.setStringValue(PreferencesKeys.TOKEN, '');
+
     buildContext!.router.replace(const LoginRoute());
   }
 

@@ -85,6 +85,8 @@ class LoginController extends StateNotifier<LoginState> {
       await localeManager.setStringValue(PreferencesKeys.TOKEN,
           notifier.state.requestState.data!.token.toString());
       state = state.copyWith(token: notifier.state.requestState.data!.token);
+      ref.invalidate(loginServiceProvider);
+
       buildContext!.router.replace(const HomeRoute());
     }
   }
@@ -106,7 +108,6 @@ class LoginState extends Equatable {
 
   LoginState copyWith({bool? obscureText, String? token}) {
     return LoginState(
-        obscureText: obscureText ?? this.obscureText,
-        token: token ?? this.token);
+        obscureText: obscureText ?? this.obscureText, token: this.token);
   }
 }
