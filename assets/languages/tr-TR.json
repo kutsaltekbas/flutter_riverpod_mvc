@@ -1,0 +1,24 @@
+{
+    "something_went_wrong": "Bir şeyler yanlış gitti",
+    "login_screen": {
+        "welcome": "Hoş Geldiniz.",
+        "pls_login": "Lütfen Giriş Yapınız",
+        "mail": "Mail",
+        "password": "Şifre",
+        "forgot_password": "Şifremi Unuttum?",
+        "login_button": "Giriş Yap",
+        "forgot_password_button": {
+            "reset_password": "Şifreni Sıfırla",
+            "send_request": "Şifre Sıfırlama İsteği Gönder"
+        },
+        "login_check": "Kontrol Ediliyor",
+        "mail_check": {
+            "invalid_email": "Hatalı e-mail!",
+            "empty_email": "E-mail boş bırakılamaz!"
+        }
+    },
+    "home_screen": {
+        "my_team": "Ekibim",
+        "error": "Bir Hata Oluştu!"
+    }
+}
