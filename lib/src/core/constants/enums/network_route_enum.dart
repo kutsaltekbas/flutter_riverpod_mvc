@@ -2,8 +2,8 @@
 
 enum NetworkRoutes {
   DEFAULT(''),
-  LOGIN('api/login'),
-  USER_DATA('api/users?page=2');
+  LOGIN('https://reqres.in/api/login'),
+  USER_DATA('https://reqres.in/api/users?page=1');
 
   final String rawValue;
 

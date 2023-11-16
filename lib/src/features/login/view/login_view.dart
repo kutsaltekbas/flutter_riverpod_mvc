@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -207,7 +206,7 @@ class LoginView extends StatelessWidget {
                 LocaleKeys.login_screen_login_button.locale,
                 style: ref.textTheme.displaySmall,
               ),
-            LoadingStateEnum.LOADING => Center(
+            LoadingStateEnum.LOADING => const Center(
                 child: CircularProgressIndicator(),
               ),
             LoadingStateEnum.SUCCESS => Icon(

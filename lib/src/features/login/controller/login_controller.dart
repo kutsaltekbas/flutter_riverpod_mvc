@@ -31,7 +31,7 @@ class LoginController extends StateNotifier<LoginState> {
   late LoginService loginService;
 
   LocaleManager localeManager = LocaleManager.instance;
-  Dio _manager = Dio();
+  final Dio _manager = Dio();
 
   Future<void> login() async {
     final notifier = ref.read(loginServiceProvider.notifier);
@@ -43,23 +43,6 @@ class LoginController extends StateNotifier<LoginState> {
         ),
       );
     }
-    // if (formKey.currentState!.validate()) {
-    //   Response? response = await loginService.postLogin(LoginPostModel(
-    //     email: emailController.text,
-    //     password: passwordController.text,
-    //   ));
-    //   LoginResponseModel responseModel =
-    //       LoginResponseModel.fromJson(response!.data!);
-    //   if (response.statusCode == 200) {
-    //     await localeManager.setStringValue(
-    //         PreferencesKeys.TOKEN, responseModel.token.toString());
-    //     state = state.copyWith(token: responseModel.token);
-    //     buildContext!.router.replace(const HomeRoute());
-    //   }
-    //   return response;
-    // } else {
-    //   return null;
-    // }
   }
 
   Future<void> init() async {
