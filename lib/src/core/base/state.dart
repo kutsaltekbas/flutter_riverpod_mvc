@@ -1,4 +1,5 @@
-import '../../features/login/model/login_response_model.dart';
+import 'package:flutter_riverpod_mvc/src/features/login/model/login_response_model.dart';
+
 import '../constants/enums/loading_state_enum.dart';
 
 class RequestState {
